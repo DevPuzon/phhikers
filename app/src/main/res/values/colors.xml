@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--    <color name="colorPrimary">#6200EE</color>-->
+    <!--    <color name="colorPrimaryDark">#3700B3</color>-->
+    <!--    <color name="colorAccent">#03DAC5</color>-->
+
+    <color name="offline">#6C6D71</color>
+    <color name="online">#009900</color>
+
+    <color name="scan">#10A010</color>
+    <color name="stop">#FC4136</color>
+    <color name="save">@color/colorPrimary</color>
+
+    <color name="semi_transparent">#66000000</color>
+    <color name="semi_transparent_primary">#E8F7F9</color>
+    <color name="transparent">#FF000000</color>
+    <color name="White">#FAFAFA</color>
+    <color name="colorPrimary">#42A5F5</color>
+    <color name="colorPrimaryDark">#1A237E</color>
+    <color name="colorAccent">#42A5F5</color>
+    <color name="colorSecondary">#75C9CC</color>
+    <color name="colorSecondaryAccent">#AFDFDB</color>
+    <color name="background">#BADEFC</color>
+    <color name="cardBackground">#FFFFFF</color>
+    <color name="white">#FFFFFF</color>
+    <color name="blacktextColor">#3C3F41</color>
+    <color name="textmuted">#A8A8A8</color>
+
+    <color name="colorGray">#292929</color>
+    <color name="colorWhite">#E1E1E1</color>
+    <color name="colorCardClick">#FBDCCE</color>
+    <color name="my_app_primary_variant_color">#3949AB</color>
+    <color name="my_app_secondary_variant_color">#75C9CC</color>
+    <color name="my_app_color_on_primary">#FFFFFF</color>
+    <color name="my_app_surface_color">#FFFFFF</color>
+    <color name="my_app_color_on_secondary">#75C9CC</color>
+    <color name="my_app_color_on_surface">#42A5F5</color>
+    <color name="my_app_color_on_error">#F77D6A</color>
+    <color name="my_app_color_on_background">#F38CAF</color>
+</resources>
