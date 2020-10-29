@@ -70,12 +70,12 @@ public class MountainListAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         h.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                context.startActivity(new Intent(context, TrackLocation.class)
-//                        .putExtra("title",data.getName())
-//                        .putExtra("url_tracker",data.getPoint())
-//                );
-//                Activity activity = (Activity) context;
-//                activity.overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                context.startActivity(new Intent(context, TrackLocation.class)
+                        .putExtra("title",data.getName())
+                        .putExtra("url_tracker",data.getPoint())
+                );
+                Activity activity = (Activity) context;
+                activity.overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             }
         });
     }

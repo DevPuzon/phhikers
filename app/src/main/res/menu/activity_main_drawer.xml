@@ -11,17 +11,17 @@
         <item
             android:id="@+id/nav_tips"
             android:icon="@drawable/ic_tips"
-            android:visible="false"
+            android:visible="true"
             android:title="Tips and guide" />
         <item
             android:id="@+id/nav_checklist"
             android:icon="@drawable/ic_checklist"
-            android:visible="false"
+            android:visible="true"
             android:title="Checklist" />
         <item
             android:id="@+id/nav_acc"
             android:icon="@drawable/ic_account"
-            android:visible="false"
+            android:visible="true"
             android:title="Account" />
         <item
             android:id="@+id/nav_logout"

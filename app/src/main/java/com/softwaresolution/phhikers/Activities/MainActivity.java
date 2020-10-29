@@ -30,7 +30,7 @@ import com.softwaresolution.phhikers.R;
 import com.softwaresolution.phhikers.Utils.ALLDATAS;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, LocationListener {
+     implements NavigationView.OnNavigationItemSelectedListener, LocationListener {
 
     private String TAG = "MainActivity";
 
@@ -38,7 +38,6 @@ public class MainActivity extends AppCompatActivity
     private TextView txt_email, txt_name;
     private NavigationView navigationView;
     private Toolbar toolbar;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,7 +81,6 @@ public class MainActivity extends AppCompatActivity
                 3000, 0, MainActivity.this);
     }
 
-
     private SharedPreferences saveData;
     private SharedPreferences.Editor editor;
     @Override
@@ -116,7 +114,6 @@ public class MainActivity extends AppCompatActivity
             editor.commit();
             finish();
         }
-
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
