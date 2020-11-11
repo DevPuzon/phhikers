@@ -9,14 +9,83 @@
         android:id="@+id/webView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="11dp"
+        android:layout_above="@id/view_btm"
         />
-    <View
+    <RelativeLayout
+        android:id="@+id/view_btm"
         android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:background="#FFF"
-        android:layout_alignParentBottom="true">
-    </View>
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" >
+        <LinearLayout
+            android:id="@+id/v_timehike"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:textSize="22dp"
+                android:textColor="#1D267F"
+                android:textStyle="bold"
+                android:text="Time hike"/>
+            <TextView
+                android:id="@+id/txt_timehike"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:textSize="18dp"
+                android:textColor="#202020"
+                android:text="1 sec."/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="2dp"
+                android:layout_marginRight="4dp"
+                android:onClick="onShowWeather">
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/cloud"
+                    android:layout_gravity="center"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:textColor="@color/textmuted"
+                    android:textSize="14dp"
+                    android:text="Weather"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="2dp"
+                android:layout_marginRight="3dp"
+                android:onClick="onShowCompass">
+                <ImageView
+                    android:background="@drawable/compass_ic"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:textColor="@color/textmuted"
+                    android:textSize="14dp"
+                    android:text="Compass"/>
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
     <androidx.cardview.widget.CardView
         android:id="@+id/btn_track"
         android:layout_width="80dp"

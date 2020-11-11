@@ -14,13 +14,14 @@
     <color name="semi_transparent">#66000000</color>
     <color name="semi_transparent_primary">#E8F7F9</color>
     <color name="transparent">#FF000000</color>
+    <color name="transparentwhite">#99FFFFFF</color>
     <color name="White">#FAFAFA</color>
-    <color name="colorPrimary">#42A5F5</color>
+    <color name="colorPrimary">#029299</color>
     <color name="colorPrimaryDark">#1A237E</color>
-    <color name="colorAccent">#42A5F5</color>
-    <color name="colorSecondary">#75C9CC</color>
+    <color name="colorAccent">#028991</color>
+    <color name="colorSecondary">#026B70</color>
     <color name="colorSecondaryAccent">#AFDFDB</color>
-    <color name="background">#BADEFC</color>
+    <color name="background">#C7FBFE</color>
     <color name="cardBackground">#FFFFFF</color>
     <color name="white">#FFFFFF</color>
     <color name="blacktextColor">#3C3F41</color>
@@ -33,8 +34,8 @@
     <color name="my_app_secondary_variant_color">#75C9CC</color>
     <color name="my_app_color_on_primary">#FFFFFF</color>
     <color name="my_app_surface_color">#FFFFFF</color>
-    <color name="my_app_color_on_secondary">#75C9CC</color>
-    <color name="my_app_color_on_surface">#42A5F5</color>
+    <color name="my_app_color_on_secondary">#026B70</color>
+    <color name="my_app_color_on_surface">#026B70</color>
     <color name="my_app_color_on_error">#F77D6A</color>
     <color name="my_app_color_on_background">#F38CAF</color>
 </resources>

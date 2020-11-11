@@ -99,6 +99,10 @@ public class MainActivity extends AppCompatActivity
             startActivity(new Intent(MainActivity.this,CheckListAct.class));
             overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
         }
+        if (id == R.id.nav_his){
+            startActivity(new Intent(MainActivity.this,History.class));
+            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+        }
         if (id == R.id.nav_acc){
             startActivity(new Intent(MainActivity.this, UpdateAccount.class));
             overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);

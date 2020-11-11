@@ -94,4 +94,7 @@ public class Register extends AppCompatActivity {
             }
         });
     }
+    public void onLogin(View v){
+        onBackPressed();
+    }
 }

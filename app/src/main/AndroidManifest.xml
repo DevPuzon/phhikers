@@ -12,8 +12,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApp.NoActionBar"
         android:windowSoftInputMode="adjustResize|stateHidden">
-        <activity android:name=".Activities.Auth.UpdateAccount"
+        <activity android:name=".Activities.Weather"
             android:theme="@style/Theme.DefaultTheme"></activity>
+        <activity
+            android:name=".Activities.Compass"
+            android:theme="@style/Theme.DefaultTheme" />
+        <activity
+            android:name=".Activities.SaveHike"
+            android:theme="@style/Theme.DefaultTheme" />
+        <activity
+            android:name=".Activities.History"
+            android:theme="@style/Theme.DefaultTheme" />
+        <activity
+            android:name=".Activities.Auth.UpdateAccount"
+            android:theme="@style/Theme.DefaultTheme" />
         <activity
             android:name=".Activities.CheckListAct"
             android:theme="@style/Theme.DefaultTheme" />
@@ -25,13 +37,13 @@
             android:theme="@style/Theme.DefaultTheme" />
         <activity
             android:name=".Activities.TipsMain"
-            android:theme="@style/Theme.DefaultTheme" />
-        <activity android:name=".Activities.Auth.AuthLogin" /> <!-- <activity android:name=".Activities.MainActivity" -->
+            android:theme="@style/Theme.DefaultTheme" /> <!-- <activity android:name=".Activities.Auth.AuthLogin" /> -->
+        <!-- <activity android:name=".Activities.MainActivity" -->
         <!-- android:theme="@style/Theme.DefaultTheme" -->
         <!-- android:windowSoftInputMode="adjustResize|stateHidden" /> -->
-        <activity android:name=".Activities.MainActivity" />
+<!--        <activity android:name=".Activities.MainActivity" />-->
         <activity
-            android:name=".Activities.SplashScreen"
+            android:name=".Activities.MainActivity"
             android:windowSoftInputMode="adjustResize|stateHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -48,9 +60,9 @@
             android:theme="@style/Theme.MyApp.NoActionBar"
             android:windowSoftInputMode="adjustResize|stateHidden" />
     </application>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
-
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
 </manifest>

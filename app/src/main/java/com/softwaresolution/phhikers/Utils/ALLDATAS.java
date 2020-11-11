@@ -38,7 +38,6 @@ public class ALLDATAS {
     }
 
     private static void onGetData(final Context context) {
-
         final IServices iServices ;
         final Loading loading = new Loading(context);
         loading.loadDialog.show();
