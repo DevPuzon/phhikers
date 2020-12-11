@@ -9,7 +9,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class ServiceMain {
 
     public static final String BASE_URL = "https://transandcarrental.000webhostapp.com/";
-    public static final String BASE_URL_MOCKY = "https://api.mocki.io/v1/";
+//    public static final String BASE_URL_MOCKY = "https://api.mocki.io/v1/";
+    public static final String BASE_URL_MOCKY = "https://run.mocky.io/v3/";
     public static final String BASE_URL_WEATHER = "https://api.weatherapi.com/v1/";
     private static Retrofit retrofit;
 

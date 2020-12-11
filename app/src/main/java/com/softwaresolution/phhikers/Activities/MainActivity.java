@@ -23,9 +23,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
-import com.google.gson.Gson;
 import com.softwaresolution.phhikers.Activities.Auth.UpdateAccount;
-import com.softwaresolution.phhikers.Fragments.MountainMain;
+import com.softwaresolution.phhikers.Fragments.FragmentMainActivity;
 import com.softwaresolution.phhikers.R;
 import com.softwaresolution.phhikers.Utils.ALLDATAS;
 
@@ -60,10 +59,8 @@ public class MainActivity extends AppCompatActivity
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                    new MountainMain()).commit();
-            navigationView.setCheckedItem(R.id.nav_home);
+                    new FragmentMainActivity()).commit();
         }
-        getSupportActionBar().setTitle("Mountain list");
 
         ALLDATAS.init_data(MainActivity.this);
         init();
@@ -86,23 +83,26 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
-        if (id == R.id.nav_home){
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                    new MountainMain()).commit();
-            getSupportActionBar().setTitle("Mountain list");
-        }
-        if (id == R.id.nav_tips){
-            startActivity(new Intent(MainActivity.this,TipsMain.class));
-            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-        }
-        if (id == R.id.nav_checklist){
-            startActivity(new Intent(MainActivity.this,CheckListAct.class));
-            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-        }
-        if (id == R.id.nav_his){
-            startActivity(new Intent(MainActivity.this,History.class));
-            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-        }
+//        if (id == R.id.nav_home){
+//            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+//                    new MountainMain()).commit();
+//            getSupportActionBar().setTitle("Mountain list");
+
+//            startActivity(new Intent(MainActivity.this,MountainMain.class));
+//            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+//        }
+//        if (id == R.id.nav_tips){
+//            startActivity(new Intent(MainActivity.this,TipsMain.class));
+//            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+//        }
+//        if (id == R.id.nav_checklist){
+//            startActivity(new Intent(MainActivity.this,CheckListAct.class));
+//            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+//        }
+//        if (id == R.id.nav_his){
+//            startActivity(new Intent(MainActivity.this,History.class));
+//            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+//        }
         if (id == R.id.nav_acc){
             startActivity(new Intent(MainActivity.this, UpdateAccount.class));
             overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);

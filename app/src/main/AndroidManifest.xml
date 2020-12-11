@@ -36,6 +36,9 @@
             android:name=".Activities.TrackLocation"
             android:theme="@style/Theme.DefaultTheme" />
         <activity
+            android:name=".Activities.MountainMain"
+            android:theme="@style/Theme.DefaultTheme" />
+        <activity
             android:name=".Activities.TipsMain"
             android:theme="@style/Theme.DefaultTheme" /> <!-- <activity android:name=".Activities.Auth.AuthLogin" /> -->
 

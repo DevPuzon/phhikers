@@ -4,29 +4,25 @@
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_home"
-            android:icon="@drawable/ic_home"
-            android:title="Home" />
-        <item
-            android:id="@+id/nav_tips"
-            android:icon="@drawable/ic_tips"
-            android:visible="true"
-            android:title="Tips and guide" />
-        <item
-            android:id="@+id/nav_checklist"
-            android:icon="@drawable/ic_checklist"
-            android:visible="true"
-            android:title="Checklist" />
-        <item
-            android:id="@+id/nav_his"
-            android:icon="@drawable/ichistorry"
-            android:visible="true"
-            android:title="History" />
+<!--        <item-->
+<!--            android:id="@+id/nav_home"-->
+<!--            android:icon="@drawable/ic_home"-->
+<!--            android:title="Home" />-->
+<!--        <item-->
+<!--            android:id="@+id/nav_tips"-->
+<!--            android:icon="@drawable/ic_tips"-->
+<!--            android:title="Tips and guide" />-->
+<!--        <item-->
+<!--            android:id="@+id/nav_checklist"-->
+<!--            android:icon="@drawable/ic_checklist"-->
+<!--            android:title="Checklist" />-->
+<!--        <item-->
+<!--            android:id="@+id/nav_his"-->
+<!--            android:icon="@drawable/ichistorry"-->
+<!--            android:title="History" />-->
         <item
             android:id="@+id/nav_acc"
             android:icon="@drawable/ic_account"
-            android:visible="true"
             android:title="Account" />
         <item
             android:id="@+id/nav_logout"

@@ -13,7 +13,6 @@ import android.view.ViewGroup;
 
 import com.google.gson.Gson;
 import com.softwaresolution.phhikers.Adapter.GuideTipsAdapter;
-import com.softwaresolution.phhikers.Adapter.MountainListAdapter;
 import com.softwaresolution.phhikers.Pojo.GuidesTip;
 import com.softwaresolution.phhikers.R;
 import com.softwaresolution.phhikers.Utils.ALLDATAS;

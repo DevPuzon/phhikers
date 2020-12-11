@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.softwaresolution.phhikers.Activities.CustBrowser;
-import com.softwaresolution.phhikers.Activities.TrackLocation;
+//import com.softwaresolution.phhikers.Activities.TrackLocation;
 import com.softwaresolution.phhikers.Pojo.GuidesTip;
 import com.softwaresolution.phhikers.R;
 import com.softwaresolution.phhikers.Utils.Loading;

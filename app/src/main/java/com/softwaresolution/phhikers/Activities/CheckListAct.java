@@ -21,7 +21,7 @@ public class CheckListAct extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_check_list);
 
-        getSupportActionBar().setTitle("Tips and guide");
+        getSupportActionBar().setTitle("Checklist");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         // Inflate the layout  for this fragment

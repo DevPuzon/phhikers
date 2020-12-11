@@ -16,6 +16,9 @@ import android.widget.TextView;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.button.MaterialButton;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -70,9 +73,10 @@ public class AuthLogin extends AppCompatActivity {
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private SharedPreferences saveData;
     private SharedPreferences.Editor editor;
+    private FirebaseAuth auth = FirebaseAuth.getInstance();
     public void onLogin(){
-        String email = txt_email.getText().toString();
-        String password= txt_password.getText().toString();
+        final String email = txt_email.getText().toString();
+        final String password= txt_password.getText().toString();
         loading.loadDialog.show();
         if (TextUtils.isEmpty(email) ||TextUtils.isEmpty(password)  ){
             FancyToast.makeText(this,"Please fill all the data information.",
@@ -80,40 +84,60 @@ public class AuthLogin extends AppCompatActivity {
             return;
         }
         loading.loadDialog.show();
-        db.collection("PhHikersUser")
-                .whereEqualTo("email",email)
-                .whereEqualTo("password",password)
-                .get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                loading.loadDialog.dismiss();
-                if (task.isSuccessful()) {
-                    User user = null;
-                    for (QueryDocumentSnapshot document : task.getResult()) {
-                        Log.d(TAG, document.getId() + " => " + document.getData());
-                        user = document.toObject(User.class);
+        auth.signInWithEmailAndPassword(email,password)
+                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()){
+                            FirebaseUser user = auth.getCurrentUser();
+                            if(user.isEmailVerified()){
+                                db.collection("PhHikersUser")
+                                        .whereEqualTo("email",email)
+                                        .whereEqualTo("password",password)
+                                        .get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                        loading.loadDialog.dismiss();
+                                        if (task.isSuccessful()) {
+                                            User user = null;
+                                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                                Log.d(TAG, document.getId() + " => " + document.getData());
+                                                user = document.toObject(User.class);
+                                            }
+                                            if (user != null){
+                                                loading.loadDialog.dismiss();
+                                                FancyToast.makeText(AuthLogin.this,"Login successfully",
+                                                        FancyToast.LENGTH_SHORT,FancyToast.SUCCESS,false).show();
+                                                saveData = getSharedPreferences("saveData", MODE_PRIVATE);
+                                                editor = saveData.edit();
+                                                editor.putString("user", new Gson().toJson(user));
+                                                editor.apply();
+                                                editor.commit();
+                                                startActivity(new Intent(AuthLogin.this, MainActivity.class));
+                                                AuthLogin.this.finish();
+                                            }else{
+                                                FancyToast.makeText(AuthLogin.this,"Credentials doesn't match",
+                                                        FancyToast.LENGTH_SHORT,FancyToast.WARNING,false).show();
+                                            }
+                                            Log.d(TAG, new Gson().toJson(user));
+                                        } else {
+                                            FancyToast.makeText(AuthLogin.this,"Something went wrong, please try again later",
+                                                    FancyToast.LENGTH_SHORT,FancyToast.ERROR,false).show();
+                                        }
+                                    }
+                                });
+                            }else{
+                                loading.loadDialog.dismiss();
+                                FancyToast.makeText(AuthLogin.this,"Please check your email to verify your account.",
+                                        FancyToast.LENGTH_LONG,FancyToast.WARNING,false).show();
+                            }
+                        }else{
+                            loading.loadDialog.dismiss();
+                            Log.d(TAG,task.getException().getLocalizedMessage().toString());
+                            FancyToast.makeText(AuthLogin.this,  task.getException().getLocalizedMessage().toString(),
+                                    FancyToast.LENGTH_LONG).show();
+                        }
                     }
-                    if (user != null){
-                        loading.loadDialog.dismiss();
-                        FancyToast.makeText(AuthLogin.this,"Login successfully",
-                                FancyToast.LENGTH_SHORT,FancyToast.SUCCESS,false).show();
-                        saveData = getSharedPreferences("saveData", MODE_PRIVATE);
-                        editor = saveData.edit();
-                        editor.putString("user", new Gson().toJson(user));
-                        editor.apply();
-                        editor.commit();
-                        startActivity(new Intent(AuthLogin.this, MainActivity.class));
-                        AuthLogin.this.finish();
-                    }else{
-                        FancyToast.makeText(AuthLogin.this,"Credentials doesn't match",
-                                FancyToast.LENGTH_SHORT,FancyToast.WARNING,false).show();
-                    }
-                    Log.d(TAG, new Gson().toJson(user));
-                } else {
-                    FancyToast.makeText(AuthLogin.this,"Something went wrong, please try again later",
-                            FancyToast.LENGTH_SHORT,FancyToast.ERROR,false).show();
-                }
-            }
-        });
+                });
     }
 }
